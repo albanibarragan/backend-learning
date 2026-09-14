@@ -27,6 +27,25 @@ app.get('/health', (req, res) => {
   })
 })
 
+app.get('/users', (req, res) => {
+  res.json([
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Smith' }
+  ])
+})
+
+app.get('/users/:id', (req, res) => {
+  const {id} = req.params;
+  const idNumber = parseInt(id, 10);
+  res.json({ id: idNumber, name: `User ${id}` });
+})
+
+//ruta opcional - acd o abcd
+
+app.get('a{b}cd', (req, res) => {
+  res.send('Ruta con patrón de expresión regular');
+})
+
 app.use((req, res) => {
   res.status(404).send('No encontrado')
   
