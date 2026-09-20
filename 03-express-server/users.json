@@ -1,0 +1,142 @@
+[
+	{
+		"nombre": "Sofia",
+		"apellido": "Martinez",
+		"ciudad": "Madrid",
+		"usuario": "sofia_martinez",
+		"biografia": "Diseñadora de productos digitales y amante de la fotografia urbana."
+	},
+	{
+		"nombre": "Mateo",
+		"apellido": "Gonzalez",
+		"ciudad": "Barcelona",
+		"usuario": "mateo_gonzalez",
+		"biografia": "Desarrollador backend, lector de ciencia ficcion y cocinero aficionado."
+	},
+	{
+		"nombre": "Valentina",
+		"apellido": "Rodriguez",
+		"ciudad": "Bogota",
+		"usuario": "valen_rodriguez",
+		"biografia": "Periodista curiosa que disfruta contar historias sobre tecnologia y cultura."
+	},
+	{
+		"nombre": "Lucas",
+		"apellido": "Fernandez",
+		"ciudad": "Buenos Aires",
+		"usuario": "lucas_fernandez",
+		"biografia": "Musico independiente, coleccionista de vinilos y viajero de fin de semana."
+	},
+	{
+		"nombre": "Camila",
+		"apellido": "Lopez",
+		"ciudad": "Medellin",
+		"usuario": "camila_lopez",
+		"biografia": "Ingeniera ambiental comprometida con las ciudades sostenibles."
+	},
+	{
+		"nombre": "Diego",
+		"apellido": "Sanchez",
+		"ciudad": "Lima",
+		"usuario": "diego_sanchez",
+		"biografia": "Chef en formacion, explorador de mercados locales y fanatico del cafe."
+	},
+	{
+		"nombre": "Emma",
+		"apellido": "Torres",
+		"ciudad": "Valencia",
+		"usuario": "emma_torres",
+		"biografia": "Ilustradora editorial que encuentra inspiracion en la naturaleza."
+	},
+	{
+		"nombre": "Nicolas",
+		"apellido": "Ramirez",
+		"ciudad": "Quito",
+		"usuario": "nico_ramirez",
+		"biografia": "Profesor de historia, senderista y coleccionista de mapas antiguos."
+	},
+	{
+		"nombre": "Isabella",
+		"apellido": "Vargas",
+		"ciudad": "Santiago",
+		"usuario": "isa_vargas",
+		"biografia": "Arquitecta interesada en el urbanismo, la pintura y los espacios publicos."
+	},
+	{
+		"nombre": "Alejandro",
+		"apellido": "Castro",
+		"ciudad": "Monterrey",
+		"usuario": "ale_castro",
+		"biografia": "Emprendedor tecnologico que ayuda a pequenos negocios a crecer en internet."
+	},
+	{
+		"nombre": "Lucia",
+		"apellido": "Herrera",
+		"ciudad": "Sevilla",
+		"usuario": "lucia_herrera",
+		"biografia": "Psicologa, lectora empedernida y voluntaria en proyectos comunitarios."
+	},
+	{
+		"nombre": "Gabriel",
+		"apellido": "Morales",
+		"ciudad": "Guadalajara",
+		"usuario": "gabriel_morales",
+		"biografia": "Analista de datos apasionado por el beisbol y la visualizacion de informacion."
+	},
+	{
+		"nombre": "Mariana",
+		"apellido": "Ortega",
+		"ciudad": "Montevideo",
+		"usuario": "mariana_ortega",
+		"biografia": "Bailarina contemporanea y creadora de talleres para jovenes artistas."
+	},
+	{
+		"nombre": "Adrian",
+		"apellido": "Navarro",
+		"ciudad": "Zaragoza",
+		"usuario": "adrian_navarro",
+		"biografia": "Administrador de sistemas, ciclista urbano y aprendiz de fotografia."
+	},
+	{
+		"nombre": "Paula",
+		"apellido": "Mendoza",
+		"ciudad": "Cordoba",
+		"usuario": "paula_mendoza",
+		"biografia": "Veterinaria dedicada al cuidado animal y a la educacion sobre adopciones."
+	},
+	{
+		"nombre": "Javier",
+		"apellido": "Rojas",
+		"ciudad": "La Paz",
+		"usuario": "javier_rojas",
+		"biografia": "Guia de montana que disfruta conocer personas y paisajes nuevos."
+	},
+	{
+		"nombre": "Renata",
+		"apellido": "Silva",
+		"ciudad": "Sao Paulo",
+		"usuario": "renata_silva",
+		"biografia": "Productora audiovisual, amante del cine clasico y de las historias familiares."
+	},
+	{
+		"nombre": "Tomas",
+		"apellido": "Paredes",
+		"ciudad": "Asuncion",
+		"usuario": "tomas_paredes",
+		"biografia": "Estudiante de ingenieria que construye robots y toca la guitarra."
+	},
+	{
+		"nombre": "Elena",
+		"apellido": "Fuentes",
+		"ciudad": "Alicante",
+		"usuario": "elena_fuentes",
+		"biografia": "Consultora de comunicacion y aficionada a la ceramica artesanal."
+	},
+	{
+		"nombre": "Bruno",
+		"apellido": "Iglesias",
+		"ciudad": "Mar del Plata",
+		"usuario": "bruno_iglesias",
+		"biografia": "Fotografo de naturaleza que combina su trabajo con la conservacion marina."
+	}
+]

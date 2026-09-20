@@ -27,11 +27,9 @@ app.get('/health', (req, res) => {
   })
 })
 
-app.get('/users', (req, res) => {
-  res.json([
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Smith' }
-  ])
+app.get('/users', async (req, res) => {
+  const users = await import('./users.json', { with: { type: 'json' } });
+    res.json(users)
 })
 
 app.get('/users/:id', (req, res) => {
@@ -39,6 +37,7 @@ app.get('/users/:id', (req, res) => {
   const idNumber = parseInt(id, 10);
   res.json({ id: idNumber, name: `User ${id}` });
 })
+
 
 //ruta opcional - acd o abcd
 
