@@ -28,9 +28,31 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/users', async (req, res) => {
-  const users = await import('./users.json', { with: { type: 'json' } });
-    res.json(users)
-})
+  const {default: users} = await import('./users.json', { with: { type: 'json' } });
+  const { limit, nombre, apellido, usuario } = req.query;
+  console.log('Query parameters:', req.query);
+ 
+  let filteredUsers = users;
+
+  if (nombre) {
+    filteredUsers = filteredUsers.filter(user => user.nombre.toLowerCase() === nombre.toLowerCase());
+  }
+
+  if (apellido) {
+    filteredUsers = filteredUsers.filter(user => user.apellido.toLowerCase().includes(apellido.toLowerCase()));
+  }
+
+  if (usuario) {
+    filteredUsers = filteredUsers.filter(user => user.usuario.toLowerCase().includes(usuario.toLowerCase()));
+  }
+
+  if (limit) {
+    const limitNumber = parseInt(limit, 10);
+    filteredUsers = filteredUsers.slice(0, limitNumber);
+  }
+
+  res.json(filteredUsers);
+});
 
 app.get('/users/:id', (req, res) => {
   const {id} = req.params;
