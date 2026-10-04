@@ -1,9 +1,23 @@
 import express from 'express'
+import { DEFAULT_LIMIT, DEFAULT_OFFSET } from './config.js';
+import cors from 'cors';
 
 //Puerto debe funcionar
 const PORT = process.env.PORT || 3000;
 
+const ACCEPTED_ORIGINS = ['http://localhost:3000', 'http://example.com'];
+
 const app = express();
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || ACCEPTED_ORIGINS.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Origen no permitido'));
+    }
+  }
+}));
 
 app.use((request, response, next) =>{
     const timeString = new Date().toLocaleTimeString();
@@ -28,8 +42,11 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/users', async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // cambiar esto a un dominio específico en producción
   const {default: users} = await import('./users.json', { with: { type: 'json' } });
-  const { limit, nombre, apellido, usuario } = req.query;
+  const limit = Number(req.query.limit) || DEFAULT_LIMIT;
+  const offset = Number(req.query.offset) || DEFAULT_OFFSET;
+  const { nombre, apellido, usuario } = req.query;
   console.log('Query parameters:', req.query);
  
   let filteredUsers = users;
@@ -46,12 +63,9 @@ app.get('/users', async (req, res) => {
     filteredUsers = filteredUsers.filter(user => user.usuario.toLowerCase().includes(usuario.toLowerCase()));
   }
 
-  if (limit) {
-    const limitNumber = parseInt(limit, 10);
-    filteredUsers = filteredUsers.slice(0, limitNumber);
-  }
+  const paginatedUsers = filteredUsers.slice(offset, offset + limit);
 
-  res.json(filteredUsers);
+  res.json(paginatedUsers);
 });
 
 app.get('/users/:id', (req, res) => {

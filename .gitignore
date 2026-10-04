@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Logs and local tooling files
+*.log
+.DS_Store
+.vscode/
