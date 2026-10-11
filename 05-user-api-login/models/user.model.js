@@ -1,6 +1,22 @@
 import { randomUUID } from "node:crypto";
 
-const users = [];
+const users = [
+  {
+    id: "11111111-1111-4111-8111-111111111111",
+    name: "Ana Lopez",
+    email: "ana@example.com"
+  },
+  {
+    id: "22222222-2222-4222-8222-222222222222",
+    name: "Carlos Perez",
+    email: "carlos@example.com"
+  },
+  {
+    id: "33333333-3333-4333-8333-333333333333",
+    name: "Maria Torres",
+    email: "maria@example.com"
+  }
+];
 
 export const getAllUsers = () => {
   return users;
