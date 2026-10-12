@@ -8,7 +8,7 @@ Coleccion de mini proyectos para aprender Node.js y Express paso a paso.
 | --- | --- | --- |
 | `01-node-http-server` | Modulos nativos de Node, servidor HTTP y archivos | `node server.js` |
 | `02-calculator-http-server` | Calculadora con el modulo HTTP | `node server.js` |
-| `03-express-server` | Rutas, middleware, filtros y paginacion con Express | `node index.js` |
+| `03-express-server` | CRUD de usuarios, correo unico, filtros, CORS y logs con Express | `npm run dev` |
 | `04-calculadora-api` | API REST de calculadora con Express | `npm start` |
 
 ## Requisitos

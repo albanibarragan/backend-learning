@@ -22,6 +22,8 @@ La app está construida con Express y usa una arquitectura simple pero clara:
 - `controller/user.js`: contiene la lógica de cada endpoint
 - `models/user.js`: guarda la lógica de datos y la colección en memoria
 - `middlewares/cors.js`: middleware para controlar CORS
+- `logger/`: registra cada petición con nivel, código HTTP y duración
+- `test/users.test.js`: pruebas automatizadas del CRUD y de la unicidad del correo
 - `config.js`: configuración general de paginación
 
 #### Punto de entrada
@@ -54,7 +56,8 @@ El archivo `controller/user.js` maneja la lógica de cada endpoint y valida lo q
 Incluye:
 
 - validación de `limit` y `offset` para paginación
-- validación de campos obligatorios (`name`, `lastname`, `username`)
+- validación de campos obligatorios (`name`, `lastname`, `username`, `email`)
+- normalización del correo y prevención de correos duplicados
 - comprobación de existencia de usuario antes de editar o eliminar
 - respuesta con códigos HTTP adecuados like 200, 201, 400, 404, 204
 
@@ -64,9 +67,9 @@ Esto ya refleja un nivel real de backend porque no solo se responde con texto pl
 
 En `models/user.js` se define una lista en memoria de usuarios:
 
-- arreglo de objetos con `id`, `name`, `lastname`, `username`
+- arreglo de objetos con `id`, `name`, `lastname`, `username`, `email`
 - búsquedas por id
-- filtros por nombre, apellido y username
+- filtros por nombre, apellido, username y correo
 - paginación con `slice(offset, offset + limit)`
 - creación, actualización, reemplazo y eliminación
 
@@ -95,6 +98,8 @@ Hasta este punto, el nivel es de aprendizaje práctico y base de backend, no de 
 - manejo de errores HTTP
 - paginación en endpoints
 - uso de middleware
+- registro de peticiones HTTP en archivos de log
+- pruebas automatizadas con `node:test`
 - control de CORS
 - separación de responsabilidades por carpetas
 
@@ -117,7 +122,6 @@ No he llegado aún a un backend completo de producción. Faltan cosas como:
 - JWT, sessions o cookies
 - encriptación de contraseñas
 - validación con librerías especializadas
-- testing automatizado
 - Docker y despliegue
 - arquitectura escalable con servicios, capas, repositorios y capas de seguridad
 - manejo de logs avanzados

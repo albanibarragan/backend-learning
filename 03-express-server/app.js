@@ -1,9 +1,11 @@
 import express from 'express'
 import { middlewareCors } from './middlewares/cors.js';
+import { loggerMiddleware } from './logger/logger.middleware.js';
 import { usersRouter } from './router/users.js';
 
 const app = express();
 
+app.use(loggerMiddleware);
 app.use(express.json());
 app.use(middlewareCors());
 app.use('/users', usersRouter);
@@ -18,7 +20,7 @@ app.get('/health', (req, res) => {
 if(process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
-    console.log('Server is running on port ${PORT}');
+    console.log(`Server is running on port ${PORT}`);
   });
 }
 

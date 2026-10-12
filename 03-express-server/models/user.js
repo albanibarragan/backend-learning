@@ -1,13 +1,13 @@
-export const USER_FIELDS = ['name', 'lastname', 'username'];
+export const USER_FIELDS = ['name', 'lastname', 'username', 'email'];
 
 const users = [
-	{ id: 1, name: 'Alice', lastname: 'Smith', username: 'alice123' },
-	{ id: 2, name: 'Bob', lastname: 'Johnson', username: 'bob456' },
-	{ id: 3, name: 'Charlie', lastname: 'Williams', username: 'charlie789' }
+	{ id: 1, name: 'Alice', lastname: 'Smith', username: 'alice123', email: 'alice@example.com' },
+	{ id: 2, name: 'Bob', lastname: 'Johnson', username: 'bob456', email: 'bob@example.com' },
+	{ id: 3, name: 'Charlie', lastname: 'Williams', username: 'charlie789', email: 'charlie@example.com' }
 ];
 
 export class UserModel {
-	static findAll({ limit, offset, name, lastname, username }) {
+	static findAll({ limit, offset, name, lastname, username, email }) {
 		let filteredUsers = users;
 
 		if (name) {
@@ -22,7 +22,18 @@ export class UserModel {
 			filteredUsers = filteredUsers.filter(user => user.username.toLowerCase().includes(String(username).toLowerCase()));
 		}
 
+		if (email) {
+			filteredUsers = filteredUsers.filter(user => user.email.toLowerCase().includes(String(email).toLowerCase()));
+		}
+
 		return filteredUsers.slice(offset, offset + limit);
+	}
+
+	static emailExists(email, excludedId) {
+		const normalizedEmail = email.trim().toLowerCase();
+		return users.some(user =>
+			user.id !== excludedId && user.email.toLowerCase() === normalizedEmail
+		);
 	}
 
 	static findById(id) {
